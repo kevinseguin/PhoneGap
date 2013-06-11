@@ -22,14 +22,13 @@ showAlert: function (message, title) {
 
     initialize: function() {
        var self = this;
-		this.store = new MemoryStore(function() {
-        //self.showAlert('Store Initialized', 'Info');
-		
+		self.store = new MemoryStore(function() {
+        self.showAlert('Store Initialized', 'Info');
 		 
-		 this.homeTpl = Handlebars.compile($("#home-tpl").html());
-		 this.employeeLiTpl = Handlebars.compile($("#employee-li-tpl").html());
+		 self.homeTpl = Handlebars.compile($("#home-tpl").html());
+		 self.employeeLiTpl = Handlebars.compile($("#employee-li-tpl").html());
 		 
-		  self.renderHomeView();
+		 self.renderHomeView();
 		  
     });
     $('.search-key').on('keyup', $.proxy(this.findByName, this));
