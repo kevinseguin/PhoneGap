@@ -24,10 +24,13 @@ showAlert: function (message, title) {
        var self = this;
 		this.store = new MemoryStore(function() {
         //self.showAlert('Store Initialized', 'Info');
-		 self.renderHomeView();
+		
 		 
 		 this.homeTpl = Handlebars.compile($("#home-tpl").html());
 		 this.employeeLiTpl = Handlebars.compile($("#employee-li-tpl").html());
+		 
+		  self.renderHomeView();
+		  
     });
     $('.search-key').on('keyup', $.proxy(this.findByName, this));
 }
